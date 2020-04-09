@@ -42,16 +42,16 @@
                 requestAnimationFrame(animate);
                 renderer.render(scene, camera);
                 //geometry.rotateX(0.01);
-                geometry.rotateY(0.01);
-                geometry.scale(0.01,0.01);
+                geometry.rotateY(0.1);
                 
-                geometry2.rotateX(-0.01);
-                geometry2.rotateY(-0.01);
-                geometry2.translate(0.01, -0.01, -0.01);
+                geometry2.rotateX(-0.05);
+                geometry2.rotateY(-0.05);
+                geometry2.translate(0.05, -0.05, 0.0);
 
                 geometry3.rotateX(-0.01);
-                geometry3.rotateY(-0.01);
-                geometry3.translate(-0.01, 0.01, 0.01);
+                geometry3.rotateY(0.01);
+                //geometry3.rotateZ(0.01);
+                geometry3.translate(0.1, 0.1, 0.0);
             }
 
             animate();
