@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 2: Intro to Three.js Part 2</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+	</head>
+	<body>
+		<script src="../three.js-master/build/three.js"></script>
+        <script src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+		<script>
+            var scene = new THREE.Scene();
+            var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+            var renderer = new THREE.WebGLRenderer();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            camera.position.z = 200;
+
+            //Added Light
+
+            //Blue Light from Top Right
+            var light = new THREE.PointLight(0x0000b0, 1, 200);
+            light.position.set(60, 50, 40);
+            scene.add(light);
+
+            //Yellow Light from Bottom
+            var light = new THREE.PointLight(0xffff9d, 0.9, 110);
+            light.position.set(30, -80, 50);
+            scene.add(light);
+
+            //Red Light from Top Left
+            var light = new THREE.PointLight(0xb00000, 1, 200);
+            light.position.set(-20, 50, 40);
+            scene.add(light);
+            
+            //Loading Models
+
+            //Dog model
+            var loader = new THREE.GLTFLoader();
+            loader.load('bulldog.glb',  function (gltf) {
+                gltf.scene.rotation.y = 5.5;
+                //gtlf.scene.position.z = 1;
+                gltf.scene.position.y = -50;
+                gltf.scene.position.x = -20;
+                scene.add(gltf.scene);
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+            
+            //Human model
+            var loader = new THREE.GLTFLoader();
+            loader.load('sitMale03.glb',  function (gltf) {
+                gltf.scene.rotation.y = -0.15;
+                gltf.scene.position.z = -10;
+                gltf.scene.position.y = -50;
+                gltf.scene.position.x = 35;
+                scene.add(gltf.scene);
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+
+            //Soccer ball model
+            var loader = new THREE.GLTFLoader();
+            loader.load('ballonFoot.glb',  function (gltf) {
+                gltf.scene.position.z = 20;
+                gltf.scene.position.y = -50;
+                gltf.scene.position.x = 60;
+                scene.add(gltf.scene);
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+            }, function (error) {
+                console.error(error);
+            });
+
+            function animate() {
+		        requestAnimationFrame(animate);
+		        renderer.render(scene, camera);
+            }
+	        animate();
+
+		</script>
+	</body>
+</html>
