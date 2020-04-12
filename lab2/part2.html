@@ -42,7 +42,6 @@
             var loader = new THREE.GLTFLoader();
             loader.load('bulldog.glb',  function (gltf) {
                 gltf.scene.rotation.y = 5.5;
-                //gtlf.scene.position.z = 1;
                 gltf.scene.position.y = -50;
                 gltf.scene.position.x = -20;
                 scene.add(gltf.scene);
