@@ -10,7 +10,4 @@ https://drive.google.com/file/d/1r4AiwSM8LJsHr5wgB0jjEPmPd9koCO_j/view?usp=shari
 
 Screenshot of part 2:
 
-![](images/part2SC.png)
-
-
-
+![](part2SC.png)
