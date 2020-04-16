@@ -25,14 +25,14 @@
       		var cube = new THREE.Mesh( geometry, material );
      		scene.add(cube);
 
-            //Lined-Square
+            // Lined-Square
             var geometry2 = new THREE.BoxGeometry();
             var material2 = new THREE.MeshBasicMaterial( { color: 0xfdaaf0, wireframe: true });
       		var cube2 = new THREE.Mesh( geometry2, material2 );
             cube2.position.x = 3;
      		scene.add(cube2);
 
-            //Multi-colored Square
+            // Multi-colored Square
             var geometry3 = new THREE.BoxGeometry();
             var material3 = new THREE.MeshNormalMaterial( { color: 0xdddddd, specular: 0x009900, shininess: 30, flatShading: true });
       		var cube3 = new THREE.Mesh( geometry3, material3 );
@@ -43,6 +43,49 @@
 			var light = new THREE.PointLight(0xffffff, 1, 1000);
 			light.position.set(10, 10, 10);
 			scene.add(light);
+
+            // Loading loader
+            THREE.Cache.enabled = true;
+            var count = 0;
+            var loader = new THREE.FileLoader();
+            var fshader, vshader;
+
+
+            // Loading Shaders
+            loader.load('shaders/vertexShader.vert',
+            // onLoad callback
+	        function (data) {
+			    console.log(data); // output the text to the console
+			    vshader = data;
+			    count += 1;
+			    //addCoolCube(); // we will write this method
+		    },
+            // onProgress callback
+	        function (xhr) {
+		        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	        },
+            // onError callback
+	        function (err) {
+		        console.error('An error happened');
+	        });
+
+            // Loading Fragment Shader
+            loader.load('shaders/fragmentShader.frag',
+            // onLoad callback
+	        function (data) {
+			    console.log(data); // output the text to the console
+			    fshader = data;
+			    count += 1;
+			    //addCoolCube(); // we will write this method
+		    },
+            // onProgress callback
+	        function (xhr) {
+		        console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	        },
+            // onError callback
+	        function (err) {
+		        console.error('An error happened');
+	        });
 
 			function animate() {
 				requestAnimationFrame(animate);
