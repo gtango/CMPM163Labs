@@ -70,16 +70,17 @@
 			}
 
 			//Here, adding addCoolerCube() function
-/*			var geometry4, material4, mesh2;
+			var geometry4, material4, mesh2;
 
-			// Tomato Red and Green Cube made with Shader
+			// Blue,Red, Yellow and Dark Green Cube made with Shader
 			function addCoolerCube() {
 				if(count2 == 2) {
 
 					let uniforms2 = {
-						colorC: {type: 'vec3', value: new THREE.Color(0x008000)}, //green
+						colorC: {type: 'vec3', value: new THREE.Color(0xFF00FF)}, //dark green
 						colorD: {type: 'vec3', value: new THREE.Color(0xFF0000)}, //red
-						colorE: {type: 'vec3', value: new THREE.Color(0x0000FF)}  //blue
+						colorE: {type: 'vec3', value: new THREE.Color(0x0000FF)}, //blue
+						colorF: {type: 'vec3', value: new THREE.Color(0xFFFF00)}  //yellow
 					};
 
 					geometry4 = new THREE.BoxGeometry(1, 1, 1);
@@ -94,7 +95,7 @@
 					scene.add(mesh2);
 				}	
 			}
-*/
+
             // Loading loader
             THREE.Cache.enabled = true;
             var count = 0;
@@ -136,7 +137,7 @@
 						console.error('An error happened');
 					});
 
-/*
+
 			// Loading loader2 
             THREE.Cache.enabled = true;
             var count2 = 0;
@@ -178,7 +179,7 @@
 	        	function (err) {
 		        	console.error('An error happened');
 	        	});
-*/
+
 			function animate() {
 				requestAnimationFrame(animate);
 				geometry.rotateX(-0.08);
@@ -197,10 +198,10 @@
 					geometry1.translate(0.05,0.05,0.0);
 				}
 
-				//if(geometry4) {
-					//geometry4.rotateY(0.06);
-					//geometry4.rotateX(-0.06);
-				//}
+				if(geometry4) {
+					geometry4.rotateY(0.01);
+					geometry4.rotateX(-0.01);
+				}
 
 				renderer.render(scene, camera);
 			}
