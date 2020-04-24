@@ -36,7 +36,9 @@
             cube2.position.x -= 2;
 
             // add third cube
-            material = new THREE.MeshPhongMaterial( { map: texture });
+			var texture = THREE.ImageUtils.loadTexture("176.jpg");
+			var normMap = THREE.ImageUtils.loadTexture("176_norm.jpg");
+            material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap});
             var cube3 = new THREE.Mesh(geometry, material);
             scene.add(cube3);
             cube3.position.x = 2;
