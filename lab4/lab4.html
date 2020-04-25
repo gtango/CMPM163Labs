@@ -20,8 +20,7 @@
       		document.body.appendChild(renderer.domElement);
             camera.position.z = 5;
             
-			
-			// setup the cube
+			// setup the cube (far left)
             var geometry = new THREE.BoxGeometry();
             var texture = THREE.ImageUtils.loadTexture("163.jpg");
             var normMap = THREE.ImageUtils.loadTexture("163_norm.jpg");
@@ -29,13 +28,13 @@
       		var cube = new THREE.Mesh(geometry, material);
             scene.add(cube);
              
-            // add second cube
+            // add second cube (middle)
             material = new THREE.MeshPhongMaterial( { map: texture });
             var cube2 = new THREE.Mesh(geometry, material);
             scene.add(cube2);
             cube2.position.x -= 2;
 
-            // add third cube
+            // add third cube (far right)
 			var texture = THREE.ImageUtils.loadTexture("176.jpg");
 			var normMap = THREE.ImageUtils.loadTexture("176_norm.jpg");
             material = new THREE.MeshPhongMaterial( { map: texture, normalMap: normMap});
