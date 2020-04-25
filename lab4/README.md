@@ -60,5 +60,5 @@ How Each Cube Was Made (Left to Right then Top To Bottom):
 		so that the tile textures wrap around the cube. I used a brickwall texture for this
 		cube, without a map.
 		
-Note: I used "The Book of Shaders" to help solve the last cube. I also used this on the last lab, although it was not
-      as helpful. 
+	Note: I used "The Book of Shaders" to help solve the last cube. I also used this on the last lab, 
+	although it was not as helpful as it was for this lab.
