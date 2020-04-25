@@ -69,6 +69,26 @@
     			}
 			}
 
+			// add final cube using shaders
+			var geometry2, material2, mesh2;
+
+			function addTextureShaderCube2() {
+				if(count2 == 2) {
+					var uniforms = {texture1: { type: "t", value: THREE.ImageUtils.loadTexture("191.jpg")}
+					};
+	
+      			geometry2 = new THREE.BoxGeometry(1, 1, 1);
+      			material2 =  new THREE.ShaderMaterial({
+            		uniforms: uniforms,
+      				fragmentShader: fshader2,
+              		vertexShader: vshader2,
+      				precision: "mediump"});
+
+      			mesh2 = new THREE.Mesh(geometry2, material2);
+      			mesh2.position.y = -2;
+      			scene.add(mesh2);
+    			}
+			}
 
 			// adding loaders
 			THREE.Cache.enabled = true;
@@ -108,7 +128,46 @@
 				// onError callback
       			function (err) {
       				console.error('An error happened');
-      			});	
+      			});
+
+			// adding loader two
+			var count2 = 0;
+			var loader2 = new THREE.FileLoader();
+			var fshader2, vshader2;
+
+      		loader2.load('shaders/vertexShader2.vert',
+      			// onLoad callback
+      			function (data) {
+      				console.log(data); // output the text to the console
+      				vshader2 = data;
+      				count2 += 1;
+      				addTextureShaderCube2(); // we will write this method
+      			},
+      			// onProgress callback
+      			function (xhr) {
+      				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      			},
+     			// onError callback
+      			function (err) {
+      				console.error('An error happened');
+      			});
+
+			loader2.load('shaders/fragmentShader2.frag',
+      			// onLoad callback
+      			function (data) {
+      				console.log(data); // output the text to the console
+      				fshader2 = data;
+      				count2 += 1;
+      				addTextureShaderCube2(); // we will write this method
+      			},
+      			// onProgress callback
+      			function (xhr) {
+      				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+      			},
+				// onError callback
+      			function (err) {
+      				console.error('An error happened');
+      			});
 
             var delta = -0.5;	//used to keep lighting rotating around the cubes
 
