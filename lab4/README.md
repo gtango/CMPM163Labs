@@ -13,7 +13,7 @@ Answers to Question 24:
 	Context - My understanding of the question is I need to give a formula to map
 		a given uv coordinate to a coordinate in the texture.
 
-	a) floor [ (u * 8) - 1 ]
+	a) floor [ abs[(u * 8) - 1] ]
 	b) floor [ (1 - u) * 7 ]
 	c) (2,5) = gray color
 
