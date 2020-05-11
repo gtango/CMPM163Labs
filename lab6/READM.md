@@ -15,7 +15,7 @@
 
 https://www.shadertoy.com/view/wsfBWf
 
-**Link to Other Shadertoy Project
+**Link to Other Shadertoy Project**
 
 https://www.shadertoy.com/view/wdXBzs
 
