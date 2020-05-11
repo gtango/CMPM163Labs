@@ -7,3 +7,6 @@ Description: This README is for Lab 6. It currently holds the screenshot of my i
 
 -------
 
+Screenshot of Texture(Duplicated):
+
+![](SC1.png)
