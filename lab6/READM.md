@@ -1,4 +1,9 @@
------
-Gavril Tango
-CMPM 163 Lab 6
-_____
+-------
+Creator: Gavril Tango
+
+Created: May 2020
+
+Description: This README is for Lab 6. It currently holds the screenshot of my imported texture.
+
+-------
+
