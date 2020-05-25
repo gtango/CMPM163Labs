@@ -9,7 +9,7 @@
 
 **Inspiration City Picture:**
 
-![](Inspiration.jpg)
+![](inspiration.jpg)
 
 
 **Screen Recording Link of My City:**
