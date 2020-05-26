@@ -11,6 +11,7 @@
 
 ![](inspiration.jpg)
 
+Explanation: The thing that I took from LA was the fact that there were tall towers surrounded by smaller buildings.
 
 **Screen Recording Link of My City:**
 
